@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tainía - Movie Ticket Booking Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Tainía</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="pages/login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/signup.html" class="nav-link">Signup</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/movies.html" class="nav-link">Browse Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="homepage">
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="main-logo">TAINÍA'S<br>MOVIE TICKETS</h1>
+                <p class="tagline">Book your favorite movie tickets instantly with our modern platform. Choose your seats, select showtimes, and enjoy the cinema experience.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button primary" onclick="window.location.href='pages/movies.html'">Get Started</button>
+                    <button class="cta-button secondary" onclick="window.location.href='pages/about.html'">Learn More</button>
+                    <button class="cta-button tertiary" onclick="window.location.href='pages/contact.html'">Contact Us</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="images/camera.png" alt="Movie Reel" style="max-width: 320px; width: 100%; display: block; margin: 0 auto; border-radius: 16px; transform: rotate(-15deg);" />
+            </div>
+        </div>
+        <div class="stats-section">
+            <div class="stat-item">
+                <div class="stat-number">1,200,000</div>
+                <div class="stat-label">TICKETS BOOKED</div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="section-header">
+                <h2>BOOKING FEATURES FOR MOVIE FANS</h2>
+                <button class="see-more-btn">See more</button>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card yellow">
+                    <div class="feature-badge">EASY BOOKING</div>
+                    <h3>Book tickets in seconds with our simple and intuitive interface</h3>
+                    <div class="feature-visual">
+                        <div class="movie-list">
+                            <div class="movie-item">
+                                <span>Select Movies</span>
+                            </div>
+                            <div class="movie-item">
+                                <span>Choose Seats</span>
+                            </div>
+                            <div class="movie-item">
+                                <span>Quick Payment</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-card orange">
+                    <div class="feature-badge">SHOWTIME SELECTION</div>
+                    <h3>Multiple showtimes available throughout the day for your convenience</h3>
+                    <div class="feature-tags">
+                        <div class="tag">Morning shows</div>
+                        <div class="tag">Prime time slots</div>
+                        <div class="tag">Late night movies</div>
+                    </div>
+                </div>
+
+                <div class="feature-card purple">
+                    <div class="feature-badge">SEAT SELECTION</div>
+                    <h3>Choose your perfect seat with our interactive seating chart</h3>
+                    <div class="feature-character">
+                        <div class="speech-bubble">Best seats</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theater Section -->
+        <div class="groups-section">
+            <div class="groups-content">
+                <div class="groups-text">
+                    <div class="groups-label">THEATERS</div>
+                    <h2>Browse movies by theater location and showtime</h2>
+                </div>
+                <div class="groups-visual">
+                    <div class="group-container">
+                        <div class="group-header">Cinema Mall</div>
+                        <div class="group-grid">
+                            <div class="group-item">Screen 1</div>
+                            <div class="group-item">Screen 2</div>
+                            <div class="group-item">Screen 3</div>
+                            <div class="group-item">IMAX</div>
+                            <div class="group-item">VIP Hall</div>
+                            <div class="group-item">4DX</div>
+                        </div>
+                    </div>
+                    <div class="group-container">
+                        <div class="group-header">City Center</div>
+                        <div class="group-grid">
+                            <div class="group-item">Hall A</div>
+                            <div class="group-item">Hall B</div>
+                            <div class="group-item">Premium</div>
+                            <div class="group-item">Dolby</div>
+                        </div>
+                    </div>
+                    <div class="group-container">
+                        <div class="group-header">Downtown</div>
+                        <div class="group-grid">
+                            <div class="group-item">Theater 1</div>
+                            <div class="group-item">Theater 2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="final-cta-section">
+            <h2>NEXT-LEVEL BOOKING, NO HASSLE</h2>
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h3>MOVIE TICKETS FOR EVERYONE</h3>
+                    <p>Experience seamless ticket booking with our modern cinema platform</p>
+                    <div class="cta-actions">
+                        <button class="cta-btn primary" onclick="window.location.href='pages/movies.html'">Book Tickets</button>
+                        <button class="cta-btn secondary" onclick="window.location.href='pages/about.html'">Learn More</button>
+                    </div>
+                </div>
+                <div class="cta-visual">
+                    <div class="streaming-icon">Tickets</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    Tainía
+                </div>
+                <p class="footer-tagline">
+                    MOVIE TICKET BOOKING
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Features</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/movies.html">Movie Listings</a></li>
+                    <li><a href="#seat-selection">Seat Selection</a></li>
+                    <li><a href="#showtimes">Showtimes</a></li>
+                    <li><a href="#theaters">Theater Locations</a></li>
+                    <li><a href="#mobile-app">Mobile App</a></li>
+                    <li><a href="#gift-cards">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="pages/contact.html">Contact Us</a></li>
+                    <li><a href="#booking-guide">Booking Guide</a></li>
+                    <li><a href="#refunds">Refunds & Cancellation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#partnerships">Partnerships</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                Copyright © 2025 Tainía | All rights reserved
+            </div>
+            <div class="footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms & Conditions</a>
+                <a href="#cookies">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

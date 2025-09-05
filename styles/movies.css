@@ -1,0 +1,359 @@
+/* Movies Page Styles */
+.movies-page {
+    min-height: 100vh;
+    background: var(--background-dark);
+    padding-top: 120px;
+    padding-bottom: 4rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-family: var(--font-secondary);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--extra-color-1), var(--extra-color-2));
+    border-radius: 2px;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(248, 250, 252, 0.8);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filters Section */
+.filters-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.search-bar {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.search-input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    background: var(--white);
+    color: var(--text-dark);
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: var(--dark-gray);
+}
+
+.search-btn {
+    padding: 16px 20px;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.search-btn:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    border: 2px solid transparent;
+    border-radius: 25px;
+    background: var(--white);
+    color: var(--text-dark);
+    font-family: var(--font-main);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    z-index: -1;
+}
+
+.filter-btn:hover::before {
+    left: 0;
+}
+
+.filter-btn:hover {
+    color: var(--white);
+    box-shadow: var(--shadow-hover);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.filter-btn.active::before {
+    left: 0;
+}
+
+/* Movies Grid */
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.movie-card {
+    flex: 1;
+    min-width: 300px;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(6, 82, 221, 0.1), rgba(27, 20, 100, 0.1));
+    opacity: 0;
+    z-index: 1;
+}
+
+.movie-card:hover::before {
+    opacity: 1;
+}
+
+.movie-poster {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.movie-card:hover .movie-poster {
+    /* No scale transform on hover */
+}
+
+.movie-info {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.movie-title {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.movie-genre {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.movie-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--extra-color-4);
+}
+
+.movie-rating::before {
+    content: '⭐';
+    font-size: 1.1rem;
+}
+
+.movie-duration {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.movie-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.movie-description {
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+/* Book ticket button styles removed since booking functionality is removed */
+
+/* Loading Spinner removed for simplified version */
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--dark-gray);
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.empty-state p {
+    font-size: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .movies-page {
+        padding-top: 100px;
+    }
+    
+    .page-header {
+        margin-bottom: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .filters-section {
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .search-bar {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+    
+    .filter-buttons {
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+    
+    .filter-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .movies-grid {
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .movie-card {
+        min-width: 280px;
+    }
+    
+    .movie-poster {
+        height: 350px;
+    }
+    
+    .movie-info {
+        padding: 1.25rem;
+    }
+    
+    .movie-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .movie-card {
+        min-width: auto;
+    }
+    
+    .filter-buttons {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    
+    .filter-btn {
+        flex-shrink: 0;
+    }
+    
+    .search-input {
+        padding: 14px 16px;
+        font-size: 0.95rem;
+    }
+    
+    .search-btn {
+        padding: 14px 16px;
+    }
+}
+
+/* Removed animation delays */

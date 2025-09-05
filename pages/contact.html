@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tainía</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/about-contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Tainía</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link">Signup</a>
+                </li>
+                <li class="nav-item">
+                    <a href="movies.html" class="nav-link">Browse Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Get in Touch</h1>
+                <p class="page-subtitle">We'd love to hear from you. Let's start a conversation.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info-section">
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">📧</div>
+                            <h3>Email Us</h3>
+                            <p>Send us an email and we'll get back to you within 24 hours.</p>
+                            <a href="mailto:support@tainia.com" class="contact-link">support@tainia.com</a>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">📞</div>
+                            <h3>Call Us</h3>
+                            <p>Speak directly with our support team for immediate assistance.</p>
+                            <a href="tel:+1234567890" class="contact-link">+1 (234) 567-8900</a>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">💬</div>
+                            <h3>Live Chat</h3>
+                            <p>Chat with us in real-time for quick answers to your questions.</p>
+                            <button class="contact-link chat-button">Start Chat</button>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">📍</div>
+                            <h3>Visit Us</h3>
+                            <p>Come say hello at our headquarters. We'd love to meet you!</p>
+                            <address class="contact-address">
+                                123 Cinema Street<br>
+                                Entertainment District<br>
+                                Los Angeles, CA 90210
+                            </address>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <div class="form-container">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName" class="form-label">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                    <div class="error-message" id="firstNameError"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="lastName" class="form-label">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                    <div class="error-message" id="lastNameError"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-input">
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select id="subject" name="subject" class="form-input" required>
+                                    <option value="">Please select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="booking">Booking Support</option>
+                                    <option value="technical">Technical Issue</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="feedback">Feedback & Suggestions</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="error-message" id="subjectError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-input message-textarea" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
+                                <div class="error-message" id="messageError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for movie updates and exclusive offers
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h4>How do I cancel or modify my booking?</h4>
+                        <p>You can cancel or modify your booking up to 2 hours before the showtime through your account dashboard or by contacting our support team.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>What payment methods do you accept?</h4>
+                        <p>We accept all major credit cards, debit cards, PayPal, and mobile payment methods like Apple Pay and Google Pay.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>How do I receive my tickets?</h4>
+                        <p>After successful payment, you'll receive digital tickets via email and SMS. You can also access them through your account on our website or app.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Is there a booking fee?</h4>
+                        <p>We charge a small convenience fee per transaction to maintain our platform and provide excellent service. The fee is clearly displayed before payment.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Can I choose my seats?</h4>
+                        <p>Yes! Our interactive seat map allows you to choose your preferred seats for all participating cinemas.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Do you offer group discounts?</h4>
+                        <p>We offer special rates for group bookings of 10 or more tickets. Contact our support team for more information about group discounts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    Tainía
+                </div>
+                <p class="footer-tagline">
+                    MOVIE TICKET BOOKING
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">Instagram</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Features</h4>
+                <ul class="footer-links">
+                    <li><a href="movies.html">Movie Listings</a></li>
+                    <li><a href="#seat-selection">Seat Selection</a></li>
+                    <li><a href="#showtimes">Showtimes</a></li>
+                    <li><a href="#theaters">Theater Locations</a></li>
+                    <li><a href="#mobile-app">Mobile App</a></li>
+                    <li><a href="#gift-cards">Gift Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="#booking-guide">Booking Guide</a></li>
+                    <li><a href="#refunds">Refunds & Cancellation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#partnerships">Partnerships</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                Copyright © 2025 Tainía | All rights reserved
+            </div>
+            <div class="footer-legal">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms & Conditions</a>
+                <a href="#cookies">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/contact.js"></script>
+</body>
+</html>
