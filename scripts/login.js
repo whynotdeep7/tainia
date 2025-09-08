@@ -1,11 +1,5 @@
 // Simple Login System
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is already logged in
-    if (localStorage.getItem('currentUser')) {
-        window.location.href = '../index.html';
-        return;
-    }
-
     const form = document.getElementById('loginForm');
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
@@ -21,59 +15,30 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = passwordInput.value;
 
         // Simple validation
-        if (!email) {
-            showMessage('emailError', 'Email is required');
+        if (!email || !password) {
+            showMessage('emailError', 'Please fill all fields.');
             return;
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            showMessage('emailError', 'Please enter a valid email address');
-            return;
-        }
+        // Check if user exists in localStorage
+        let storedPassword = localStorage.getItem(email);
 
-        if (!password) {
-            showMessage('passwordError', 'Password is required');
-            return;
-        }
-
-        // Check if user exists in local storage
-        const users = getStoredUsers();
-        const user = users.find(u => u.email === email && u.password === password);
-
-        if (user) {
-            // Login successful
-            loginSuccess(user);
+        if (storedPassword === null) {
+            showMessage('emailError', 'User not found. Please signup.');
+        } else if (storedPassword === password) {
+            // Set logged-in status
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('currentUser', email);
+            showMessage('success', 'Login successful! Redirecting to movies...');
+            // Clear form
+            form.reset();
+            // Redirect to movies page after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'movies.html';
+            }, 2000);
         } else {
-            // Check if user exists but wrong password
-            const userExists = users.find(u => u.email === email);
-            if (userExists) {
-                showMessage('passwordError', 'Incorrect password');
-            } else {
-                showMessage('emailError', 'No account found with this email');
-            }
+            showMessage('passwordError', 'Incorrect password.');
         }
-    }
-
-    function loginSuccess(user) {
-        // Store current user session
-        localStorage.setItem('currentUser', JSON.stringify({
-            email: user.email,
-            fullName: user.fullName,
-            loginTime: new Date().toISOString()
-        }));
-
-        // Show success message
-        showMessage('success', 'Login successful! Redirecting...');
-
-        // Redirect to homepage after 2 seconds
-        setTimeout(() => {
-            window.location.href = '../index.html';
-        }, 2000);
-    }
-
-    function getStoredUsers() {
-        const users = localStorage.getItem('registeredUsers');
-        return users ? JSON.parse(users) : [];
     }
 
     function showMessage(elementId, message) {

@@ -184,10 +184,6 @@
     object-fit: cover;
 }
 
-.movie-card:hover .movie-poster {
-    /* No scale transform on hover */
-}
-
 .movie-info {
     padding: 1.5rem;
     position: relative;
@@ -247,7 +243,37 @@
     color: var(--dark-gray);
     font-size: 0.9rem;
     line-height: 1.4;
-    margin-bottom: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* Book Now Button Styles */
+.book-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+}
+
+.book-btn:hover {
+    background-color: #5855eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
+}
+
+.book-btn:active {
+    transform: translateY(0);
+}
+
+.book-btn.hidden {
+    display: none;
 }
 
 /* Book ticket button styles removed since booking functionality is removed */
