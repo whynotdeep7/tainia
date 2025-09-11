@@ -1,4 +1,3 @@
-// Simple Signup System
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('signupForm');
     const fullNameInput = document.getElementById('fullName');
@@ -6,21 +5,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordInput = document.getElementById('password');
     const confirmPasswordInput = document.getElementById('confirmPassword');
 
-    // Handle form submission
     form.addEventListener('submit', handleSignup);
 
     function handleSignup(e) {
         e.preventDefault();
 
-        // Get form values
         const fullName = fullNameInput.value.trim();
         const email = emailInput.value.trim();
         const password = passwordInput.value;
         const confirmPassword = confirmPasswordInput.value;
 
-        // Simple validation
+        
+        clearErrors();
+
+     
         if (!fullName || !email || !password || !confirmPassword) {
             showMessage('nameError', 'Please fill all fields.');
+            return;
+        }
+
+        
+        const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
+
+        if (!passwordRegex.test(password)) {
+            showMessage('passwordError', 'Password must contain atleast 6 char, 1 number and 1 special char.');
             return;
         }
 
@@ -29,20 +37,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Check if user already exists
         if (localStorage.getItem(email) !== null) {
             showMessage('emailError', 'User already exists. Please login.');
             return;
         }
 
-        // Store user in localStorage (simple example)
         localStorage.setItem(email, password);
         showMessage('success', 'Signup successful! Redirecting to login...');
         
-        // Clear form
         form.reset();
         
-        // Redirect to login page after 2 seconds
         setTimeout(() => {
             window.location.href = 'login.html';
         }, 2000);
@@ -54,5 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             element.textContent = message;
             element.classList.add('show');
         }
+    }
+
+    function clearErrors() {
+        document.querySelectorAll('.error-message').forEach(el => {
+            el.textContent = '';
+            el.classList.remove('show');
+        });
     }
 });
